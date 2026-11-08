@@ -22,19 +22,35 @@
         .header-box {
             width: 100%;
             margin: 0;
-            padding: 10px 30px;
+            padding: 12px 35px;
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            background: #ffffff;
-            border-bottom: 1px solid #eeeeee;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            background: #f8f9fa; /* Màu trắng ngà hơi đậm nhẹ để thấy rõ header */
+            border-bottom: 2px solid #e5e7eb;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             border-radius: 0;
         }
 
+        .logo-link {
+            display: inline-block;
+            cursor: pointer;
+            text-decoration: none;
+            transition: opacity 0.2s ease, transform 0.15s ease;
+        }
+
+        .logo-link:hover {
+            opacity: 0.85;
+            transform: scale(1.05);
+        }
+
+        .logo-link:active {
+            transform: scale(0.96);
+        }
+
         .ff-icon {
-            width: 48px;
-            height: 48px;
+            width: 50px;
+            height: 50px;
             border-radius: 0;
             object-fit: cover;
             display: block;
@@ -42,74 +58,74 @@
 
         /* Main Container */
         .container {
-            max-width: 850px;
-            margin: 35px auto 0;
-            padding: 0 20px 60px;
+            max-width: 880px;
+            margin: 40px auto 0;
+            padding: 0 25px 70px;
         }
 
         /* Profile / Bio Section */
         .profile-section {
             display: flex;
             align-items: center;
-            gap: 35px;
-            margin-bottom: 35px;
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
         .profile-avatar {
-            width: 150px;
-            height: 150px;
+            width: 165px;
+            height: 165px;
             border-radius: 50%;
             object-fit: cover;
             flex-shrink: 0;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.16);
         }
 
         .profile-bio h1 {
             font-family: 'Times New Roman', Times, serif;
-            font-size: 28px;
+            font-size: 36px;
             font-weight: bold;
             color: #111111;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .profile-bio p {
-            color: #555555;
-            font-size: 15px;
+            color: #444444;
+            font-size: 17px;
             line-height: 1.65;
         }
 
         /* Section Headings */
         .section-title {
             font-family: 'Times New Roman', Times, serif;
-            font-size: 22px;
+            font-size: 26px;
             font-weight: bold;
             color: #111111;
-            margin-top: 30px;
-            margin-bottom: 14px;
+            margin-top: 35px;
+            margin-bottom: 16px;
         }
 
         /* Unordered Lists */
         ul.custom-list {
             list-style-type: disc;
-            padding-left: 22px;
+            padding-left: 24px;
             margin-bottom: 25px;
         }
 
         ul.custom-list li {
-            color: #444444;
-            font-size: 15px;
-            margin-bottom: 8px;
-            line-height: 1.5;
+            color: #333333;
+            font-size: 17px;
+            margin-bottom: 10px;
+            line-height: 1.6;
         }
 
         /* Footer */
         footer {
             border-top: 1px solid #eeeeee;
-            padding: 25px 0;
+            padding: 30px 0;
             text-align: center;
-            color: #777777;
-            font-size: 14px;
-            margin-top: 40px;
+            color: #666666;
+            font-size: 15px;
+            margin-top: 50px;
         }
 
         /* Responsive for mobile */
@@ -129,9 +145,11 @@
 </head>
 <body>
 
-    <!-- Header Box with Free Fire Mobile Icon -->
+    <!-- Header Box with Clickable Free Fire Logo -->
     <header class="header-box">
-        <img src="freefire.png" alt="Free Fire" class="ff-icon" onerror="this.src='freefire_app_icon.png'">
+        <a href="./" onclick="window.location.reload(); return false;" title="Refresh page" class="logo-link">
+            <img src="freefire.png" alt="Free Fire" class="ff-icon" onerror="this.src='freefire_app_icon.png'">
+        </a>
     </header>
 
     <!-- Main Content -->
