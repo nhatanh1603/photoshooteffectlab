@@ -1,435 +1,206 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" data-bs-theme="dark">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Portfolio - Bùi Trần Nhật Anh</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Welcome to my portfolio - Bui Tran Nhat Anh">
+    <meta name="author" content="Bùi Trần Nhật Anh">
+    <title>Welcome to my portfolio - Bùi Trần Nhật Anh</title>
+
+    <!-- Bootstrap 5 CDN & Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            padding-top: 75px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .bs-sidebar {
+            position: sticky;
+            top: 85px;
+        }
+        .bs-sidebar .nav-link {
+            color: var(--bs-body-color);
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+        .bs-sidebar .nav-link:hover, .bs-sidebar .nav-link.active {
+            background-color: var(--bs-tertiary-bg);
+            color: var(--bs-primary);
+        }
+        .bs-sidebar .nav .nav {
+            padding-left: 1.25rem;
+        }
+        .avatar-img {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--bs-primary);
+        }
+        .project-card {
+            transition: transform 0.2s;
+        }
+        .project-card:hover {
+            transform: translateY(-3px);
+        }
+    </style>
 </head>
-<body>
-    <!-- Header & Navigation -->
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">
-                <span class="logo-symbol">&lt;/&gt;</span>
-                <span class="logo-text">NhatAnh<span class="dot">.</span>dev</span>
+
+<body class="homepage">
+    <!-- Navbar Top -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#portfolio">
+                <i class="fa-solid fa-code me-2"></i>BuiTranNhatAnh.Dev
             </a>
-
-            <!-- Desktop Menu -->
-            <nav class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link active">Trang chủ</a>
-                <a href="#about" class="nav-link">Giới thiệu</a>
-                <a href="#skills" class="nav-link">Kỹ năng</a>
-                <a href="#projects" class="nav-link">Dự án</a>
-                <a href="#contact" class="nav-link">Liên hệ</a>
-            </nav>
-
-            <div class="nav-actions">
-                <!-- Theme Toggle Button -->
-                <button id="theme-toggle" class="theme-btn" aria-label="Đổi giao diện">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
-                <!-- Mobile Hamburger Menu Button -->
-                <button id="menu-toggle" class="menu-btn" aria-label="Mở menu">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbar-collapse" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+                </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <div class="badge-welcome">
-                        <span class="sparkle">✨</span> Welcome to my portfolio
-                    </div>
-                    <h1 class="hero-title">
-                        Xin chào, mình là <br>
-                        <span class="highlight-text">Bùi Trần Nhật Anh</span>
-                    </h1>
-                    <h2 class="hero-subtitle">
-                        Mình là <span id="typing-text" class="typing-text">Web Developer</span>
-                    </h2>
-                    <p class="hero-desc">
-                        Chào mừng bạn đến với portfolio cá nhân của mình! Đây là nơi mình chia sẻ các dự án học tập, kỹ năng lập trình web và hành trình theo đuổi đam mê công nghệ.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">
-                            <i class="fa-solid fa-briefcase"></i> Xem dự án
-                        </a>
-                        <a href="#contact" class="btn btn-outline">
-                            <i class="fa-regular fa-paper-plane"></i> Liên hệ ngay
-                        </a>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" title="GitHub">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                        <a href="mailto:nhatanh@example.com" title="Email">
-                            <i class="fa-solid fa-envelope"></i>
-                        </a>
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook">
-                            <i class="fa-brands fa-facebook"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="hero-image-wrapper">
-                    <div class="avatar-card">
-                        <div class="avatar-blob"></div>
-                        <img src="assets/images/avatar.jpg" alt="Bùi Trần Nhật Anh - Avatar" class="avatar-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'">
-                        <div class="floating-tag tag-code">
-                            <i class="fa-brands fa-html5"></i> HTML / CSS / JS
-                        </div>
-                        <div class="floating-tag tag-exp">
-                            <i class="fa-solid fa-circle-check"></i> Ready to Code
-                        </div>
+    <!-- Main Container -->
+    <div class="container my-4">
+        <div class="row">
+            <!-- Sidebar Table of Contents (Col 3) -->
+            <div class="col-md-3">
+                <div class="bs-sidebar" role="complementary">
+                    <div class="card bg-body-tertiary border-0 p-3 shadow-sm">
+                        <h6 class="text-uppercase fw-bold text-secondary mb-3">Mục Lục</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a href="#portfolio" class="nav-link fw-bold">Welcome to my portfolio</a>
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="#about" class="nav-link">1. About Me</a></li>
+                                    <li class="nav-item"><a href="#skills" class="nav-link">2. My Skills</a></li>
+                                    <li class="nav-item"><a href="#projects" class="nav-link">3. Projects</a></li>
+                                    <li class="nav-item"><a href="#contact" class="nav-link">4. Contact</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- About Section -->
-        <section id="about" class="about-section section-padding">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Thông tin cá nhân</span>
-                    <h2 class="section-title">Về Bản Thân Mình</h2>
-                    <div class="section-divider"></div>
+            <!-- Main Content Area (Col 9) -->
+            <div class="col-md-9" role="main">
+                <!-- Header / Hero -->
+                <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+                    <img src="assets/images/avatar.jpg" alt="Avatar" class="avatar-img shadow" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80'">
+                    <div>
+                        <h1 id="portfolio" class="display-6 fw-bold mb-1">Welcome to my portfolio</h1>
+                        <p class="text-secondary fs-5 mb-0">Họ và tên: <strong>Bùi Trần Nhật Anh</strong> (MSSV: <strong>BH02569</strong>)</p>
+                        <p class="text-muted small">Sinh viên ngành Lập trình Web & Công nghệ Thông tin</p>
+                    </div>
                 </div>
 
-                <div class="about-grid">
-                    <div class="about-text-card">
-                        <h3>Đôi nét về mình</h3>
-                        <p>
-                            Mình là <strong>Bùi Trần Nhật Anh</strong>, hiện đang là sinh viên chuyên ngành <strong>Lập trình Web & Công nghệ Thông tin</strong>. Mình có niềm đam mê đặc biệt với việc xây dựng các giao diện web trực quan, đẹp mắt và tối ưu hóa trải nghiệm người dùng (UI/UX).
-                        </p>
-                        <p>
-                            Với tinh thần luôn sẵn sàng học hỏi những công nghệ mới, mình không ngừng rèn luyện kỹ năng giải quyết vấn đề, viết code sạch (clean code) và phát triển các sản phẩm web thực tế.
-                        </p>
-                        
-                        <div class="info-list">
-                            <div class="info-item">
-                                <span class="info-label"><i class="fa-solid fa-id-card"></i> Mã sinh viên:</span>
-                                <span class="info-val">BH02569</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label"><i class="fa-solid fa-graduation-cap"></i> Chuyên ngành:</span>
-                                <span class="info-val">Web Development / IT</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label"><i class="fa-solid fa-location-dot"></i> Nơi sinh sống:</span>
-                                <span class="info-val">Việt Nam</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label"><i class="fa-solid fa-circle-check"></i> Trạng thái:</span>
-                                <span class="info-val text-success">Sẵn sàng học tập & thực tập</span>
-                            </div>
+                <p class="lead">
+                    Chào mừng thầy cô và các bạn đến với trang portfolio cá nhân của mình! Đây là trang web bài Lab môn Thiết kế Web, giới thiệu về bản thân, kỹ năng và các dự án thực hành.
+                </p>
+
+                <hr class="my-4">
+
+                <!-- Section: About -->
+                <h2 id="about" class="h3 fw-bold mb-3"><i class="fa-regular fa-user text-primary me-2"></i>About Me</h2>
+                <p>
+                    Mình là Bùi Trần Nhật Anh, hiện đang học tập và nghiên cứu trong lĩnh vực phát triển Website (Web Development). Mình đam mê lập trình giao diện, xây dựng các trang web trực quan, thân thiện và hoạt động mượt mà trên mọi thiết bị.
+                </p>
+                <ul>
+                    <li><strong>Họ và tên:</strong> Bùi Trần Nhật Anh</li>
+                    <li><strong>Mã sinh viên:</strong> BH02569</li>
+                    <li><strong>Ngành học:</strong> Thiết kế và Phát triển Website (Unit 13 - Web Design & Development)</li>
+                    <li><strong>Mục tiêu:</strong> Trở thành một lập trình viên Frontend / Full-stack Web chuyên nghiệp</li>
+                    <li><strong>Sở thích:</strong> Lập trình web, khám phá công nghệ mới, thiết kế UI/UX</li>
+                </ul>
+
+                <hr class="my-4">
+
+                <!-- Section: Skills -->
+                <h2 id="skills" class="h3 fw-bold mb-3"><i class="fa-solid fa-laptop-code text-primary me-2"></i>My Skills</h2>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="card bg-body-tertiary border-0 p-3">
+                            <h5 class="fw-bold mb-2">Web Development</h5>
+                            <p class="mb-1"><strong>HTML5 / CSS3:</strong> Thành thạo bố cục Flexbox, CSS Grid, Responsive Design</p>
+                            <p class="mb-1"><strong>JavaScript:</strong> Xử lý DOM, ES6+, xử lý sự kiện tương tác</p>
+                            <p class="mb-0"><strong>Bootstrap 5:</strong> Xây dựng giao diện nhanh, chuẩn chuẩn Responsive</p>
                         </div>
                     </div>
-
-                    <div class="about-cards-grid">
-                        <div class="card-feature">
-                            <div class="card-icon bg-blue"><i class="fa-solid fa-laptop-code"></i></div>
-                            <h4>Phát triển Web</h4>
-                            <p>Thiết kế và lập trình website responsive hoạt động mượt mà trên cả máy tính và điện thoại di động.</p>
-                        </div>
-                        <div class="card-feature">
-                            <div class="card-icon bg-purple"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                            <h4>Thiết kế Giao diện</h4>
-                            <p>Yêu thích sự tinh tế, phối màu hiện đại và chú trọng vào trải nghiệm dễ dùng cho khách hàng.</p>
-                        </div>
-                        <div class="card-feature">
-                            <div class="card-icon bg-green"><i class="fa-solid fa-code-branch"></i></div>
-                            <h4>Quản lý Mã nguồn</h4>
-                            <p>Sử dụng thành thạo Git & GitHub để quản lý phiên bản, làm việc nhóm và deploy website lên hosting.</p>
-                        </div>
-                        <div class="card-feature">
-                            <div class="card-icon bg-orange"><i class="fa-solid fa-bolt"></i></div>
-                            <h4>Tinh thần Học hỏi</h4>
-                            <p>Chủ động cập nhật các framework hiện đại, thư viện mới và kỹ năng giải quyết thuật toán.</p>
+                    <div class="col-md-6">
+                        <div class="card bg-body-tertiary border-0 p-3">
+                            <h5 class="fw-bold mb-2">Tools & Platforms</h5>
+                            <p class="mb-1"><strong>Git & GitHub:</strong> Quản lý mã nguồn, làm việc nhóm, deploy GitHub Pages</p>
+                            <p class="mb-1"><strong>IDE:</strong> Visual Studio Code</p>
+                            <p class="mb-0"><strong>Thiết kế:</strong> Figma (Wireframe & Prototyping cơ bản)</p>
                         </div>
                     </div>
                 </div>
+
+                <hr class="my-4">
+
+                <!-- Section: Projects -->
+                <h2 id="projects" class="h3 fw-bold mb-3"><i class="fa-solid fa-diagram-project text-primary me-2"></i>Projects</h2>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="card bg-body-tertiary h-100 border-0 p-3 project-card">
+                            <h5 class="fw-bold text-primary">Poeme Japanese Bakery Website</h5>
+                            <p class="text-secondary small">Dự án thiết kế website bán bánh ngọt phong cách Nhật Bản.</p>
+                            <ul>
+                                <li>Menu sản phẩm trực quan, đẹp mắt</li>
+                                <li>Thiết kế chuẩn responsive trên mobile & desktop</li>
+                                <li>Form đặt bánh trực tuyến</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card bg-body-tertiary h-100 border-0 p-3 project-card">
+                            <h5 class="fw-bold text-primary">Welcome to My Portfolio (This Site)</h5>
+                            <p class="text-secondary small">Trang web Portfolio cá nhân - Bài Lab môn Thiết kế Web.</p>
+                            <ul>
+                                <li>Giao diện hiện đại sử dụng Bootstrap 5 Dark Mode</li>
+                                <li>Cấu trúc Sidebar điều hướng gọn gàng</li>
+                                <li>Deploy trực tiếp và lưu trữ miễn phí trên GitHub Pages</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <!-- Section: Contact -->
+                <h2 id="contact" class="h3 fw-bold mb-3"><i class="fa-regular fa-envelope text-primary me-2"></i>Contact</h2>
+                <p>Mọi thông tin liên hệ hoặc trao đổi, vui lòng kết nối qua các kênh sau:</p>
+                <ul>
+                    <li><strong>Email:</strong> nhatanh.dev@gmail.com</li>
+                    <li><strong>GitHub:</strong> <a href="https://github.com" target="_blank" class="text-decoration-none">github.com</a></li>
+                    <li><strong>Số điện thoại:</strong> 0987.xxx.xxx</li>
+                    <li><strong>Địa chỉ:</strong> Hà Nội, Việt Nam</li>
+                </ul>
             </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="skills-section section-padding">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Năng lực</span>
-                    <h2 class="section-title">Kỹ Năng Kỹ Thuật</h2>
-                    <div class="section-divider"></div>
-                </div>
-
-                <div class="skills-wrapper">
-                    <!-- Category 1: Frontend -->
-                    <div class="skill-category">
-                        <h3 class="category-title"><i class="fa-solid fa-code"></i> Frontend Development</h3>
-                        <div class="skill-list">
-                            <div class="skill-card">
-                                <div class="skill-info">
-                                    <span class="skill-name"><i class="fa-brands fa-html5 text-orange"></i> HTML5 & Semantic Web</span>
-                                    <span class="skill-percentage">90%</span>
-                                </div>
-                                <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-info">
-                                    <span class="skill-name"><i class="fa-brands fa-css3-alt text-blue"></i> CSS3, Flexbox & Grid</span>
-                                    <span class="skill-percentage">85%</span>
-                                </div>
-                                <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-info">
-                                    <span class="skill-name"><i class="fa-brands fa-js text-yellow"></i> JavaScript (DOM, ES6+)</span>
-                                    <span class="skill-percentage">75%</span>
-                                </div>
-                                <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-info">
-                                    <span class="skill-name"><i class="fa-solid fa-mobile-screen-button text-purple"></i> Responsive Web Design</span>
-                                    <span class="skill-percentage">88%</span>
-                                </div>
-                                <div class="progress-bar"><div class="progress" style="width: 88%;"></div></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Category 2: Tools & Frameworks -->
-                    <div class="skill-category">
-                        <h3 class="category-title"><i class="fa-solid fa-toolbox"></i> Công Cụ & Quy Trình</h3>
-                        <div class="skill-list">
-                            <div class="skill-card">
-                                <div class="skill-info">
-                                    <span class="skill-name"><i class="fa-brands fa-git-alt text-red"></i> Git & GitHub Pages</span>
-                                    <span class="skill-percentage">80%</span>
-                                </div>
-                                <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-info">
-                                    <span class="skill-name"><i class="fa-solid fa-laptop-file text-cyan"></i> Visual Studio Code</span>
-                                    <span class="skill-percentage">85%</span>
-                                </div>
-                                <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-info">
-                                    <span class="skill-name"><i class="fa-brands fa-figma text-pink"></i> UI/UX Prototyping (Figma)</span>
-                                    <span class="skill-percentage">70%</span>
-                                </div>
-                                <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-info">
-                                    <span class="skill-name"><i class="fa-brands fa-bootstrap text-indigo"></i> Bootstrap & Tailwind CSS</span>
-                                    <span class="skill-percentage">75%</span>
-                                </div>
-                                <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="projects-section section-padding">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Sản phẩm thực hành</span>
-                    <h2 class="section-title">Dự Án Nổi Bật</h2>
-                    <div class="section-divider"></div>
-                </div>
-
-                <div class="projects-grid">
-                    <!-- Project 1 -->
-                    <article class="project-card">
-                        <div class="project-img-container">
-                            <img src="assets/images/project1.png" alt="Poeme Bakery Website" class="project-img" onerror="this.src='https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=80'">
-                            <span class="project-badge">Dự án Web</span>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Poeme Japanese Bakery Website</h3>
-                            <p class="project-description">
-                                Trang web giới thiệu tiệm bánh Nhật Bản cao cấp với giao diện thanh lịch, thực đơn bánh bắt mắt và form đặt bánh online tiện lợi.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">HTML5</span>
-                                <span class="tag">CSS3</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">Responsive</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#home" class="project-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Xem Demo</a>
-                                <a href="https://github.com" target="_blank" class="project-btn btn-ghost"><i class="fa-brands fa-github"></i> Mã nguồn</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 2 -->
-                    <article class="project-card">
-                        <div class="project-img-container">
-                            <img src="assets/images/project2.webp" alt="Welcome to My Portfolio" class="project-img" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80'">
-                            <span class="project-badge">GitHub Pages</span>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Personal Portfolio Website</h3>
-                            <p class="project-description">
-                                Trang web Portfolio cá nhân - bài Lab môn Web. Tích hợp Dark/Light theme, hiệu ứng động, hỗ trợ hiển thị tối ưu trên mọi màn hình và deploy trực tiếp trên GitHub Pages.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Semantic HTML</span>
-                                <span class="tag">Modern CSS</span>
-                                <span class="tag">Dark Mode</span>
-                                <span class="tag">GitHub Pages</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#home" class="project-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Xem Demo</a>
-                                <a href="https://github.com" target="_blank" class="project-btn btn-ghost"><i class="fa-brands fa-github"></i> Mã nguồn</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 3 -->
-                    <article class="project-card">
-                        <div class="project-img-container">
-                            <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=700&q=80" alt="Task Manager App" class="project-img">
-                            <span class="project-badge">Web Application</span>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Task Tracker & Study Planner</h3>
-                            <p class="project-description">
-                                Ứng dụng web quản lý công việc và lịch học tập cho sinh viên. Cho phép tạo, lọc, đánh dấu hoàn thành và lưu trữ dữ liệu trên LocalStorage.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">JavaScript ES6</span>
-                                <span class="tag">LocalStorage</span>
-                                <span class="tag">CSS Grid</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#home" class="project-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Xem Demo</a>
-                                <a href="https://github.com" target="_blank" class="project-btn btn-ghost"><i class="fa-brands fa-github"></i> Mã nguồn</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section section-padding">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Kết nối</span>
-                    <h2 class="section-title">Liên Hệ Với Mình</h2>
-                    <div class="section-divider"></div>
-                </div>
-
-                <div class="contact-wrapper">
-                    <div class="contact-info-box">
-                        <h3>Thông tin liên lạc</h3>
-                        <p>Đừng ngần ngại nhắn tin hoặc liên hệ với mình qua các kênh bên dưới nhé!</p>
-
-                        <div class="contact-channels">
-                            <div class="contact-channel-item">
-                                <div class="channel-icon"><i class="fa-solid fa-user"></i></div>
-                                <div>
-                                    <span class="channel-title">Họ và tên:</span>
-                                    <p class="channel-text">Bùi Trần Nhật Anh</p>
-                                </div>
-                            </div>
-                            <div class="contact-channel-item">
-                                <div class="channel-icon"><i class="fa-solid fa-envelope"></i></div>
-                                <div>
-                                    <span class="channel-title">Email:</span>
-                                    <p class="channel-text">nhatanh.dev@gmail.com</p>
-                                </div>
-                            </div>
-                            <div class="contact-channel-item">
-                                <div class="channel-icon"><i class="fa-solid fa-phone"></i></div>
-                                <div>
-                                    <span class="channel-title">Điện thoại / Zalo:</span>
-                                    <p class="channel-text">0987.xxx.xxx</p>
-                                </div>
-                            </div>
-                            <div class="contact-channel-item">
-                                <div class="channel-icon"><i class="fa-solid fa-location-dot"></i></div>
-                                <div>
-                                    <span class="channel-title">Địa điểm:</span>
-                                    <p class="channel-text">Hà Nội, Việt Nam</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Contact Form -->
-                    <div class="contact-form-box">
-                        <h3>Gửi tin nhắn trực tiếp</h3>
-                        <form id="contact-form" class="contact-form">
-                            <div class="form-group">
-                                <label for="fullname">Họ và tên <span class="required">*</span></label>
-                                <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên của bạn" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Địa chỉ Email <span class="required">*</span></label>
-                                <input type="email" id="email" name="email" placeholder="example@domain.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Tiêu đề</label>
-                                <input type="text" id="subject" name="subject" placeholder="Tiêu đề trao đổi">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Nội dung tin nhắn <span class="required">*</span></label>
-                                <textarea id="message" name="message" rows="4" placeholder="Để lại lời nhắn tại đây..." required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-block">
-                                <i class="fa-regular fa-paper-plane"></i> Gửi Tin Nhắn
-                            </button>
-                            <div id="form-alert" class="form-alert"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-logo">
-                <span class="logo-symbol">&lt;/&gt;</span>
-                <span class="logo-text">BuiTranNhatAnh<span class="dot">.</span>portfolio</span>
-            </div>
-            <p class="footer-copy">
-                &copy; <span id="current-year"></span> Bùi Trần Nhật Anh (BH02569). Bài Lab Thiết Kế Web. Hosted on <strong>GitHub Pages</strong>.
-            </p>
-            <div class="footer-back-top">
-                <a href="#home" class="back-to-top-btn" title="Lên đầu trang">
-                    <i class="fa-solid fa-arrow-up"></i>
-                </a>
-            </div>
+    <footer class="mt-5 py-4 border-top text-center text-secondary bg-body-tertiary">
+        <div class="container">
+            <p class="mb-1"><strong>Welcome to my portfolio</strong> - Bùi Trần Nhật Anh (BH02569)</p>
+            <p class="small mb-0">Bài Lab môn Thiết kế Web &bull; Hosted on <strong>GitHub Pages</strong></p>
         </div>
     </footer>
 
-    <!-- Custom Script -->
-    <script src="script.js"></script>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
