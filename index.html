@@ -3,214 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My portfolio - Bui Tran Nhat Anh</title>
+    <title>Welcome to my portfolio - Bui Tran Nhat Anh</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; }
-        
-        .top-bar {
-            height: 4px;
-            background: #2d2a4a;
-            width: 100%;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .navbar {
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #222222;
+            line-height: 1.6;
+        }
+
+        /* Top Header Navigation Box */
+        .header-box {
+            max-width: 1100px;
+            margin: 25px auto 40px;
+            padding: 20px 45px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding: 18px 60px;
-            border-bottom: 1px solid #eee;
+            align-items: center;
+            background: #ffffff;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            border-radius: 4px;
         }
-        .logo {
-            font-size: 28px;
-            font-weight: 600;
-            font-family: 'Brush Script MT', cursive;
-            letter-spacing: -2px;
-            color: #1a1a1a;
+
+        .header-title {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 26px;
+            font-weight: bold;
+            color: #111111;
         }
-        .nav-right {
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #222222;
+            font-size: 15px;
+            transition: color 0.2s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #0066cc;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        /* Profile / Bio Section */
+        .profile-section {
             display: flex;
             align-items: center;
-            gap: 32px;
+            gap: 35px;
+            margin-bottom: 35px;
         }
-        .theme-toggle {
-            width: 18px;
-            height: 18px;
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            border: 1.5px solid #333;
-            cursor: pointer;
-            display: inline-block;
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
+
+        .profile-bio h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 28px;
+            font-weight: bold;
+            color: #111111;
+            margin-bottom: 12px;
         }
-        .nav-links li a {
-            text-decoration: none;
-            color: #1a1a1a;
+
+        .profile-bio p {
+            color: #555555;
             font-size: 15px;
-            font-weight: 400;
-            transition: color 0.2s;
+            line-height: 1.65;
         }
-        .nav-links li a:hover {
-            color: #6a5acd;
+
+        /* Section Headings */
+        .section-title {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 22px;
+            font-weight: bold;
+            color: #111111;
+            margin-top: 30px;
+            margin-bottom: 14px;
         }
-        .center-container {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            margin-bottom: 12px;
+
+        /* Unordered Lists */
+        ul.custom-list {
+            list-style-type: disc;
+            padding-left: 22px;
+            margin-bottom: 25px;
         }
-        .text-left-content {
-            max-width: 800px;
-            text-align: left;
-        }
-        .portfolio-block {
-            max-width: 700px; /* Giới hạn độ rộng vừa vặn để chữ xuống hàng đẹp */
-            margin: 0 auto; /* Căn giữa khối */
-            text-align: left; /* Giữ cho chữ và danh sách thẳng hàng bên lề trái */
-            padding: 20px;
-            font-family: sans-serif;
-        }
-        /* Khoảng cách dưới tiêu đề */
-        .project-title {
-            margin-bottom: 20px;
+
+        ul.custom-list li {
+            color: #444444;
+            font-size: 15px;
+            margin-bottom: 8px;
             line-height: 1.5;
         }
-        /* Định dạng danh sách số */
-        .project-details {
+
+        /* Projects Section (Ordered list with sub-lists) */
+        ol.project-list {
             padding-left: 20px;
-            list-style-type: square;
+            margin-bottom: 30px;
         }
-        /* Tạo khoảng cách thông thoáng giữa các dòng li */
-        .project-details li {
-            margin-bottom: 12px;
+
+        ol.project-list > li {
+            font-weight: bold;
+            font-size: 15px;
+            color: #111111;
+            margin-bottom: 18px;
+        }
+
+        ol.project-list ul.sub-details {
+            list-style-type: circle;
+            padding-left: 22px;
+            margin-top: 6px;
+            font-weight: normal;
+        }
+
+        ol.project-list ul.sub-details li {
+            color: #555555;
+            font-size: 14.5px;
+            margin-bottom: 5px;
             line-height: 1.5;
         }
-        .project-details li:last-child {
-            margin-bottom: 0;
+
+        /* Footer */
+        footer {
+            border-top: 1px solid #eeeeee;
+            padding: 25px 0;
+            text-align: center;
+            color: #777777;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+
+        /* Responsive for mobile */
+        @media (max-width: 650px) {
+            .header-box {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+                padding: 15px 20px;
+            }
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="top-bar"></div>
-    <nav class="navbar">
-        <div class="logo">BNA</div>
-        <div class="nav-right">
-            <span class="theme-toggle"></span>
-            <ul class="nav-links">
-                <li><a href="#information">Personal Information</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#Skills">Skills</a></li>
+
+    <!-- Header Box -->
+    <header class="header-box" id="home">
+        <div class="header-title">Welcome to my portfolio</div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#information">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section style="display: flex; justify-content: center; align-items: center; gap: 20px; min-height: 5cqb; margin-top: 30px;">
-            <img src="assets/images/avatar.jpg" alt="Portfolio Avatar" style="width: 200px; height: 300px; object-fit: cover; border-radius: 8px;" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'">
-            <h1 style="text-align: center;">Welcome to My Portfolio</h1>
-        </section>
-        <br>
-        <p style="text-align: center;">Hi, my name is Bui Tran Nhat Anh, I'm a passionate developer with a strong interest in Web Design & Software Development.</p>
-        <br><br><br><br><br><br><br><br><br>
-
-        <!-- Personal Information Section -->
-        <section id="information" style="text-align: center; gap: 20px; min-height: 5cqb;">
-            <h2>Personal Information</h2>
-            <p>Here are some details about me:</p>
-            <br><br><br>
-            <div class="center-container">
-                <div class="text-left-content">
-                    <p><strong>Name:</strong> Bui Tran Nhat Anh</p>
-                    <p><strong>Student ID:</strong> BH02569</p>
-                    <p><strong>Major:</strong> Web Design & Development (Unit 13)</p>
-                    <p><strong>Email:</strong> nhatanh.dev@gmail.com</p>
-                    <p><strong>Phone number:</strong> 0987.xxx.xxx</p>
-                </div>
-            </div>
-        </section>
-        <br><br><br><br><br><br><br><br><br>
-
-        <!-- Experience Section -->
-        <section id="experience" style="text-align: center; gap: 20px; min-height: 5cqb;">
-            <h2>Experience</h2>
-            <p>Here are the details about my work experience & projects:</p>
-            <br><br><br>
-            <div class="portfolio-block">
-                <p class="project-title">
-                    <strong>Project name: Poeme Japanese Bakery Website</strong> – Developing a modern online bakery storefront and order management website.
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Profile / Hero Section -->
+        <section class="profile-section">
+            <img src="avatar.jpg" alt="Bui Tran Nhat Anh" class="profile-avatar" onerror="this.src='assets/images/avatar.jpg'">
+            <div class="profile-bio">
+                <h1>Bui Tran Nhat Anh</h1>
+                <p>
+                    I am a passionate web and software developer with a strong background in building modern, responsive web applications and user-friendly interfaces. Let's collaborate and bring your ideas to life.
                 </p>
-                <ol class="project-details">
-                    <li>My role: Frontend Developer, UI/UX Designer.</li>
-                    <li>Date: 01/02/2026 - 18/03/2026</li>
-                    <li>Participants: 3</li>
-                    <li>Technology: HTML5, CSS3, JavaScript, Responsive Web Design.</li>
-                    <li>Achievement: Successfully designed an elegant website with online ordering features.</li>
-                </ol>
-            </div>
-            <br><br><br>
-            <div class="portfolio-block">
-                <p class="project-title">
-                    <strong>Project name: Welcome to My Portfolio</strong> – Personal developer portfolio hosted on GitHub Pages.
-                </p>
-                <ol class="project-details">
-                    <li>My role: Web Developer.</li>
-                    <li>Date: 01/10/2026 - Present</li>
-                    <li>Participants: 1</li>
-                    <li>Technology: Semantic HTML, Modern CSS, Git & GitHub Pages.</li>
-                    <li>Achievement: Successfully deployed and hosted live on GitHub Pages.</li>
-                </ol>
             </div>
         </section>
-        <br><br><br><br><br><br><br><br><br>
 
-        <!-- Education Section -->
-        <section id="education" style="text-align: center; gap: 20px; min-height: 5cqb;">
-            <h2>Education</h2>
-            <p>Here are the details about my education:</p>
-            <br><br><br>
-            <div class="portfolio-block">
-                <p class="project-title">
-                    <strong>School: BTEC FPT</strong> – Studying in the field of Information Technology & Software Engineering.
-                </p>
-                <ol class="project-details">
-                    <li>Date: 01/09/2025 - Now</li>
-                    <li>Student ID: BH02569</li>
-                    <li>Field of study: Website Design & Development (Unit 13), Software Testing, and Database Management.</li>
-                    <li>Developed responsive web applications using HTML, CSS, JavaScript, and modern web frameworks.</li>
-                    <li>Participated in teamwork projects, mastering version control with Git and GitHub.</li>
-                </ol>
-            </div>
+        <!-- Information Section -->
+        <section id="information">
+            <h2 class="section-title">Information</h2>
+            <ul class="custom-list">
+                <li>Date of birth: 15-08-2005</li>
+                <li>Place of birth: Ha Noi, Viet Nam</li>
+                <li>Education: BTEC FPT</li>
+                <li>Student ID: BH02569</li>
+            </ul>
         </section>
-        <br><br><br><br><br><br><br><br><br>
 
         <!-- Skills Section -->
-        <section id="Skills" style="text-align: center; gap: 20px; min-height: 5cqb;">
-            <h2>Skills</h2>
-            <p>Here are the details about my skills:</p>
-            <br><br><br>
-            <div class="portfolio-block">
-                <p class="project-title">
-                    <strong>Programming Languages:</strong> JavaScript, Java, C#, Python.
-                </p>
-                <p class="project-title">
-                    <strong>Web Development:</strong> HTML5, CSS3, Responsive Design, Flexbox, CSS Grid.
-                </p>
-                <p class="project-title">
-                    <strong>Database Management:</strong> SQL Server, MySQL.
-                </p>
-                <p class="project-title">
-                    <strong>Tools & Platforms:</strong> Git, GitHub, Visual Studio Code, Linux, Figma.
-                </p>
-            </div>
+        <section id="skills">
+            <h2 class="section-title">Skills</h2>
+            <ul class="custom-list">
+                <li>Proficiency in programming languages: Java, C#, Python, JavaScript, HTML, CSS</li>
+                <li>Knowledge of HTML, CSS, JavaScript, Responsive Web Design</li>
+                <li>Experience with web development frameworks: Bootstrap, React.js</li>
+                <li>Skills in development with Visual Studio Code, Git, and GitHub Pages</li>
+            </ul>
         </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 class="section-title">Projects</h2>
+            <ol class="project-list">
+                <li>
+                    Project 1: Calculate Bill
+                    <ul class="sub-details">
+                        <li>Date: 04/2024 - 08/2024</li>
+                        <li>Technologies: Java, SQLite</li>
+                        <li>Descriptions: Built a desktop application to calculate tiered utility bills based on customer usage data.</li>
+                    </ul>
+                </li>
+                <li>
+                    Project 2: Network Design and Simulation
+                    <ul class="sub-details">
+                        <li>Date: 05/2024 - 08/2024</li>
+                        <li>Technologies: Cisco packet tracer</li>
+                        <li>Descriptions: Designed and simulated a secure, multi-floor network architecture for an educational institution supporting over 200 users.</li>
+                    </ul>
+                </li>
+                <li>
+                    Project 3: Management Application Software for a retail business
+                    <ul class="sub-details">
+                        <li>Date: 09/2024 - 12/2024</li>
+                        <li>Technologies: C#, SQL Server, .NET Framework</li>
+                        <li>Descriptions: Designed and developed a comprehensive retail inventory and sales management system.</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title">Contact</h2>
+            <ul class="custom-list">
+                <li>Email: nhatanh.dev@gmail.com</li>
+                <li>GitHub: <a href="https://github.com" target="_blank" style="color: #222;">https://github.com/</a></li>
+                <li>Phone: 0987.xxx.xxx</li>
+            </ul>
+        </section>
+
     </main>
 
-    <footer style="text-align: center; padding: 20px; background-color: #f1f1f1; margin-top: 40px;">
-        <p>&copy; 2026 Bui Tran Nhat Anh. All rights reserved.</p>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Bui Tran Nhat Anh (BH02569). All rights reserved.</p>
     </footer>
+
 </body>
 </html>
