@@ -101,19 +101,6 @@ body {
     font-size: 13px;
     line-height: 1.5;
 }
-
-/* .image-column {
-    width: 50%;
-    background-color: #0b1828;
-    border: 1px solid #1a2a3a;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    min-height: 250px;
-} */
-
 .image-column img {
     max-width: 100%;
     height: auto;
