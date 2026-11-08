@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi" data-bs-theme="dark">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,200 +7,247 @@
     <meta name="description" content="Welcome to my portfolio - Bui Tran Nhat Anh">
     <meta name="author" content="Bùi Trần Nhật Anh">
     <title>Welcome to my portfolio - Bùi Trần Nhật Anh</title>
-
-    <!-- Bootstrap 5 CDN & Font Awesome -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-
+    
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            padding-top: 75px;
+            background-color: #212529;
+            color: #d1d5db;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
         }
-        .bs-sidebar {
-            position: sticky;
-            top: 85px;
+
+        /* Top Brand Header */
+        .top-bar {
+            padding: 18px 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        .bs-sidebar .nav-link {
-            color: var(--bs-body-color);
-            padding: 0.35rem 0.75rem;
-            border-radius: 4px;
+
+        .top-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #3cd070;
+        }
+
+        .top-brand .icon {
+            font-size: 1.3rem;
+        }
+
+        /* Center Content Container */
+        .main-container {
+            max-width: 780px;
+            width: 100%;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            flex: 1;
+        }
+
+        /* Main Big Title */
+        .hero-title {
+            color: #f1b335;
+            font-size: 2.8rem;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-subtitle {
+            text-align: center;
+            color: #9ca3af;
+            font-size: 1.05rem;
+            margin-bottom: 25px;
+        }
+
+        /* Divider */
+        hr {
+            border: none;
+            border-top: 1px solid #374151;
+            margin: 25px 0 35px;
+        }
+
+        /* Section Heading */
+        .section-heading {
+            color: #f1b335;
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 18px;
+        }
+
+        /* Links List */
+        .links-list {
+            list-style-type: disc;
+            padding-left: 24px;
+            margin-bottom: 35px;
+        }
+
+        .links-list li {
+            margin-bottom: 10px;
+        }
+
+        .links-list a {
+            color: #00e676;
+            text-decoration: underline;
+            font-size: 1.05rem;
+            transition: color 0.15s ease;
+        }
+
+        .links-list a:hover {
+            color: #69f0ae;
+        }
+
+        /* Details info cards (sub sections) */
+        .info-card {
+            background-color: #2a2e33;
+            border: 1px solid #374151;
+            border-radius: 6px;
+            padding: 18px 22px;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            display: none;
+        }
+
+        .info-card.active {
+            display: block;
+        }
+
+        .info-card h3 {
+            color: #f1b335;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .info-card p, .info-card li {
+            color: #d1d5db;
             font-size: 0.95rem;
+            line-height: 1.6;
         }
-        .bs-sidebar .nav-link:hover, .bs-sidebar .nav-link.active {
-            background-color: var(--bs-tertiary-bg);
-            color: var(--bs-primary);
+
+        .info-card ul {
+            padding-left: 20px;
+            margin-top: 8px;
         }
-        .bs-sidebar .nav .nav {
-            padding-left: 1.25rem;
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px 20px 40px;
+            margin-top: auto;
         }
-        .avatar-img {
-            width: 130px;
-            height: 130px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid var(--bs-primary);
+
+        footer hr {
+            max-width: 780px;
+            margin: 0 auto 30px;
         }
-        .project-card {
-            transition: transform 0.2s;
-        }
-        .project-card:hover {
-            transform: translateY(-3px);
+
+        footer p {
+            color: #6b7280;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin-bottom: 4px;
         }
     </style>
 </head>
+<body>
 
-<body class="homepage">
-    <!-- Navbar Top -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#portfolio">
-                <i class="fa-solid fa-code me-2"></i>BuiTranNhatAnh.Dev
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div id="navbar-collapse" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Container -->
-    <div class="container my-4">
-        <div class="row">
-            <!-- Sidebar Table of Contents (Col 3) -->
-            <div class="col-md-3">
-                <div class="bs-sidebar" role="complementary">
-                    <div class="card bg-body-tertiary border-0 p-3 shadow-sm">
-                        <h6 class="text-uppercase fw-bold text-secondary mb-3">Mục Lục</h6>
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a href="#portfolio" class="nav-link fw-bold">Welcome to my portfolio</a>
-                                <ul class="nav flex-column">
-                                    <li class="nav-item"><a href="#about" class="nav-link">1. About Me</a></li>
-                                    <li class="nav-item"><a href="#skills" class="nav-link">2. My Skills</a></li>
-                                    <li class="nav-item"><a href="#projects" class="nav-link">3. Projects</a></li>
-                                    <li class="nav-item"><a href="#contact" class="nav-link">4. Contact</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Main Content Area (Col 9) -->
-            <div class="col-md-9" role="main">
-                <!-- Header / Hero -->
-                <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
-                    <img src="assets/images/avatar.jpg" alt="Avatar" class="avatar-img shadow" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80'">
-                    <div>
-                        <h1 id="portfolio" class="display-6 fw-bold mb-1">Welcome to my portfolio</h1>
-                        <p class="text-secondary fs-5 mb-0">Họ và tên: <strong>Bùi Trần Nhật Anh</strong> (MSSV: <strong>BH02569</strong>)</p>
-                        <p class="text-muted small">Sinh viên ngành Lập trình Web & Công nghệ Thông tin</p>
-                    </div>
-                </div>
-
-                <p class="lead">
-                    Chào mừng thầy cô và các bạn đến với trang portfolio cá nhân của mình! Đây là trang web bài Lab môn Thiết kế Web, giới thiệu về bản thân, kỹ năng và các dự án thực hành.
-                </p>
-
-                <hr class="my-4">
-
-                <!-- Section: About -->
-                <h2 id="about" class="h3 fw-bold mb-3"><i class="fa-regular fa-user text-primary me-2"></i>About Me</h2>
-                <p>
-                    Mình là Bùi Trần Nhật Anh, hiện đang học tập và nghiên cứu trong lĩnh vực phát triển Website (Web Development). Mình đam mê lập trình giao diện, xây dựng các trang web trực quan, thân thiện và hoạt động mượt mà trên mọi thiết bị.
-                </p>
-                <ul>
-                    <li><strong>Họ và tên:</strong> Bùi Trần Nhật Anh</li>
-                    <li><strong>Mã sinh viên:</strong> BH02569</li>
-                    <li><strong>Ngành học:</strong> Thiết kế và Phát triển Website (Unit 13 - Web Design & Development)</li>
-                    <li><strong>Mục tiêu:</strong> Trở thành một lập trình viên Frontend / Full-stack Web chuyên nghiệp</li>
-                    <li><strong>Sở thích:</strong> Lập trình web, khám phá công nghệ mới, thiết kế UI/UX</li>
-                </ul>
-
-                <hr class="my-4">
-
-                <!-- Section: Skills -->
-                <h2 id="skills" class="h3 fw-bold mb-3"><i class="fa-solid fa-laptop-code text-primary me-2"></i>My Skills</h2>
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <div class="card bg-body-tertiary border-0 p-3">
-                            <h5 class="fw-bold mb-2">Web Development</h5>
-                            <p class="mb-1"><strong>HTML5 / CSS3:</strong> Thành thạo bố cục Flexbox, CSS Grid, Responsive Design</p>
-                            <p class="mb-1"><strong>JavaScript:</strong> Xử lý DOM, ES6+, xử lý sự kiện tương tác</p>
-                            <p class="mb-0"><strong>Bootstrap 5:</strong> Xây dựng giao diện nhanh, chuẩn chuẩn Responsive</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card bg-body-tertiary border-0 p-3">
-                            <h5 class="fw-bold mb-2">Tools & Platforms</h5>
-                            <p class="mb-1"><strong>Git & GitHub:</strong> Quản lý mã nguồn, làm việc nhóm, deploy GitHub Pages</p>
-                            <p class="mb-1"><strong>IDE:</strong> Visual Studio Code</p>
-                            <p class="mb-0"><strong>Thiết kế:</strong> Figma (Wireframe & Prototyping cơ bản)</p>
-                        </div>
-                    </div>
-                </div>
-
-                <hr class="my-4">
-
-                <!-- Section: Projects -->
-                <h2 id="projects" class="h3 fw-bold mb-3"><i class="fa-solid fa-diagram-project text-primary me-2"></i>Projects</h2>
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <div class="card bg-body-tertiary h-100 border-0 p-3 project-card">
-                            <h5 class="fw-bold text-primary">Poeme Japanese Bakery Website</h5>
-                            <p class="text-secondary small">Dự án thiết kế website bán bánh ngọt phong cách Nhật Bản.</p>
-                            <ul>
-                                <li>Menu sản phẩm trực quan, đẹp mắt</li>
-                                <li>Thiết kế chuẩn responsive trên mobile & desktop</li>
-                                <li>Form đặt bánh trực tuyến</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card bg-body-tertiary h-100 border-0 p-3 project-card">
-                            <h5 class="fw-bold text-primary">Welcome to My Portfolio (This Site)</h5>
-                            <p class="text-secondary small">Trang web Portfolio cá nhân - Bài Lab môn Thiết kế Web.</p>
-                            <ul>
-                                <li>Giao diện hiện đại sử dụng Bootstrap 5 Dark Mode</li>
-                                <li>Cấu trúc Sidebar điều hướng gọn gàng</li>
-                                <li>Deploy trực tiếp và lưu trữ miễn phí trên GitHub Pages</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <hr class="my-4">
-
-                <!-- Section: Contact -->
-                <h2 id="contact" class="h3 fw-bold mb-3"><i class="fa-regular fa-envelope text-primary me-2"></i>Contact</h2>
-                <p>Mọi thông tin liên hệ hoặc trao đổi, vui lòng kết nối qua các kênh sau:</p>
-                <ul>
-                    <li><strong>Email:</strong> nhatanh.dev@gmail.com</li>
-                    <li><strong>GitHub:</strong> <a href="https://github.com" target="_blank" class="text-decoration-none">github.com</a></li>
-                    <li><strong>Số điện thoại:</strong> 0987.xxx.xxx</li>
-                    <li><strong>Địa chỉ:</strong> Hà Nội, Việt Nam</li>
-                </ul>
-            </div>
-        </div>
+    <!-- Top Left Logo / Title -->
+    <div class="top-bar">
+        <a href="#" class="top-brand">
+            <span class="icon">🧍‍♂️</span>
+            <span>Portfolio.Org</span>
+        </a>
     </div>
 
-    <!-- Footer -->
-    <footer class="mt-5 py-4 border-top text-center text-secondary bg-body-tertiary">
-        <div class="container">
-            <p class="mb-1"><strong>Welcome to my portfolio</strong> - Bùi Trần Nhật Anh (BH02569)</p>
-            <p class="small mb-0">Bài Lab môn Thiết kế Web &bull; Hosted on <strong>GitHub Pages</strong></p>
+    <!-- Main Content Area -->
+    <main class="main-container">
+        <!-- Hero Title -->
+        <h1 class="hero-title">Welcome to my portfolio</h1>
+        <p class="hero-subtitle">Bùi Trần Nhật Anh - Student ID: BH02569</p>
+
+        <hr>
+
+        <!-- About Section Heading -->
+        <h2 class="section-heading">About</h2>
+
+        <!-- Green Links List -->
+        <ul class="links-list">
+            <li><a href="#about-me" onclick="toggleSection('about-me')">About Me & Education</a></li>
+            <li><a href="#skills" onclick="toggleSection('skills')">Skills & Web Technologies</a></li>
+            <li><a href="#projects" onclick="toggleSection('projects')">Practical Projects</a></li>
+            <li><a href="#contact" onclick="toggleSection('contact')">Sites - Contact</a></li>
+        </ul>
+
+        <!-- Collapsible Content for each link -->
+        <div id="about-me" class="info-card">
+            <h3>👤 About Me & Education</h3>
+            <p><strong>Họ và tên:</strong> Bùi Trần Nhật Anh</p>
+            <p><strong>Mã số sinh viên:</strong> BH02569</p>
+            <p><strong>Chuyên ngành:</strong> Thiết kế và Phát triển Website (Web Development / IT)</p>
+            <p><strong>Mục tiêu:</strong> Trở thành một lập trình viên Web chuyên nghiệp, làm chủ các công nghệ Frontend & Backend hiện đại.</p>
         </div>
+
+        <div id="skills" class="info-card">
+            <h3>💻 Skills & Web Technologies</h3>
+            <ul>
+                <li><strong>HTML5 / CSS3:</strong> Flexbox, Responsive Layout, Web Standards</li>
+                <li><strong>JavaScript:</strong> DOM Manipulation, ES6+, Interactive Features</li>
+                <li><strong>Tools:</strong> Git, GitHub Pages, Visual Studio Code, Linux</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="info-card">
+            <h3>🚀 Practical Projects</h3>
+            <ul>
+                <li><strong>Welcome to My Portfolio:</strong> Trang web portfolio cá nhân nộp bài lab, host trực tiếp trên GitHub Pages.</li>
+                <li><strong>Poeme Japanese Bakery:</strong> Giao diện website tiệm bánh Nhật Bản với đầy đủ menu và form đặt hàng.</li>
+            </ul>
+        </div>
+
+        <div id="contact" class="info-card">
+            <h3>📬 Sites - Contact</h3>
+            <ul>
+                <li><strong>Email:</strong> nhatanh.dev@gmail.com</li>
+                <li><strong>GitHub:</strong> <a href="https://github.com" target="_blank" style="color:#00e676;">github.com/nhatanh</a></li>
+                <li><strong>Địa chỉ:</strong> Hà Nội, Việt Nam</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <hr>
+        <p>Don't forget bookmark this site.</p>
+        <p>You can forget this site, but you can't forget an Ideology</p>
     </footer>
 
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleSection(id) {
+            const section = document.getElementById(id);
+            if (section) {
+                const isVisible = section.classList.contains('active');
+                // Ẩn tất cả card khác
+                document.querySelectorAll('.info-card').forEach(c => c.classList.remove('active'));
+                // Nếu chưa mở thì mở ra
+                if (!isVisible) {
+                    section.classList.add('active');
+                }
+            }
+        }
+    </script>
 </body>
 </html>
