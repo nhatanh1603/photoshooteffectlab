@@ -3,155 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to my portfolio - Bui Tran Nhat Anh</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            zoom: 1.45;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background-color: #ffffff;
-            color: #222222;
-            line-height: 1.45;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        /* Full Width Header */
-        .header-box {
-            width: 100%;
-            margin: 0;
-            padding: 8px 30px;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            background: #f8f9fa; /* Màu trắng ngà hơi đậm nhẹ để thấy rõ header */
-            border-bottom: 2px solid #e5e7eb;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-            border-radius: 0;
-        }
-
-        .logo-link {
-            display: inline-block;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .ff-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 0;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Main Container */
-        .container {
-            max-width: 860px;
-            width: 100%;
-            margin: 15px auto 0;
-            padding: 0 20px 5px;
-            flex: 1;
-        }
-
-        /* Profile / Bio Section */
-        .profile-section {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            margin-bottom: 14px;
-        }
-
-        .profile-avatar {
-            width: 125px;
-            height: 125px;
-            border-radius: 50%;
-            object-fit: cover;
-            flex-shrink: 0;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-        }
-
-        .profile-bio h1 {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 28px;
-            font-weight: bold;
-            color: #111111;
-            margin-bottom: 6px;
-        }
-
-        /* Section Headings */
-        .section-title {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 21px;
-            font-weight: bold;
-            color: #111111;
-            margin-top: 12px;
-            margin-bottom: 5px;
-        }
-
-        /* Unordered Lists */
-        ul.custom-list {
-            list-style-type: disc;
-            padding-left: 22px;
-            margin-bottom: 8px;
-        }
-
-        ul.custom-list li {
-            color: #333333;
-            font-size: 15.5px;
-            margin-bottom: 4px;
-            line-height: 1.4;
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid #eeeeee;
-            padding: 10px 0;
-            text-align: center;
-            color: #666666;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-
-        /* Responsive for mobile */
-        @media (max-width: 650px) {
-            .header-box {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-                padding: 15px 20px;
-            }
-            .profile-section {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-    </style>
+    <title>Welcome to my portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header Box with Clickable Free Fire Logo -->
     <header class="header-box">
         <a href="./" onclick="window.location.reload(); return false;" title="Refresh page" class="logo-link">
-            <img src="freefire.png" alt="Free Fire" class="ff-icon" onerror="this.src='freefire_app_icon.png'">
+            <img src="freefire.png" alt="Logo" class="ff-icon">
         </a>
     </header>
 
-    <!-- Main Content -->
     <main class="container">
         
-        <!-- Profile / Hero Section -->
         <section class="profile-section">
-            <img src="scamdoh.png" alt="Bui Tran Nhat Anh" class="profile-avatar" onerror="this.src='assets/images/avatar.jpg'">
+            <img src="scamdoh.png" alt="Avatar" class="profile-avatar">
             <div class="profile-bio">
                 <h1>Zino</h1>
                 <ul class="custom-list" style="margin-bottom: 0;">
@@ -163,7 +29,6 @@
             </div>
         </section>
 
-        <!-- Information Section -->
         <section id="information">
             <h2 class="section-title">Information</h2>
             <ul class="custom-list">
@@ -172,7 +37,6 @@
             </ul>
         </section>
 
-        <!-- Achievement Section -->
         <section id="achievement">
             <h2 class="section-title">Achievement</h2>
             <ul class="custom-list">
@@ -180,19 +44,16 @@
             </ul>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact">
             <h2 class="section-title">Contact</h2>
             <ul class="custom-list">
                 <li>Email: zinofw202@gmail.com</li>
                 <li>GitHub: <a href="https://github.com/nhatanh1603" target="_blank" style="color: #222;">https://github.com/nhatanh1603/</a></li>
-                
             </ul>
         </section>
 
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>End.</p>
     </footer>
