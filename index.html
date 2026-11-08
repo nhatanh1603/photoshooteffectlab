@@ -1,253 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to my portfolio - Bui Tran Nhat Anh">
-    <meta name="author" content="Bùi Trần Nhật Anh">
-    <title>Welcome to my portfolio - Bùi Trần Nhật Anh</title>
-    
+    <title>My portfolio - Bui Tran Nhat Anh</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #212529;
-            color: #d1d5db;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            padding: 0;
-            margin: 0;
-        }
-
-        /* Top Brand Header */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; }
+        
         .top-bar {
-            padding: 18px 30px;
+            height: 4px;
+            background: #2d2a4a;
+            width: 100%;
+        }
+        .navbar {
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: space-between;
+            padding: 18px 60px;
+            border-bottom: 1px solid #eee;
         }
-
-        .top-brand {
-            display: inline-flex;
+        .logo {
+            font-size: 28px;
+            font-weight: 600;
+            font-family: 'Brush Script MT', cursive;
+            letter-spacing: -2px;
+            color: #1a1a1a;
+        }
+        .nav-right {
+            display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 32px;
+        }
+        .theme-toggle {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 1.5px solid #333;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links li a {
             text-decoration: none;
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #3cd070;
-        }
-
-        .top-brand .icon {
-            font-size: 1.3rem;
-        }
-
-        /* Center Content Container */
-        .main-container {
-            max-width: 780px;
-            width: 100%;
-            margin: 40px auto 0;
-            padding: 0 25px;
-            flex: 1;
-        }
-
-        /* Main Big Title */
-        .hero-title {
-            color: #f1b335;
-            font-size: 2.8rem;
-            font-weight: 500;
-            text-align: center;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-        }
-
-        .hero-subtitle {
-            text-align: center;
-            color: #9ca3af;
-            font-size: 1.05rem;
-            margin-bottom: 25px;
-        }
-
-        /* Divider */
-        hr {
-            border: none;
-            border-top: 1px solid #374151;
-            margin: 25px 0 35px;
-        }
-
-        /* Section Heading */
-        .section-heading {
-            color: #f1b335;
-            font-size: 1.6rem;
+            color: #1a1a1a;
+            font-size: 15px;
             font-weight: 400;
-            margin-bottom: 18px;
+            transition: color 0.2s;
         }
-
-        /* Links List */
-        .links-list {
-            list-style-type: disc;
-            padding-left: 24px;
-            margin-bottom: 35px;
+        .nav-links li a:hover {
+            color: #6a5acd;
         }
-
-        .links-list li {
-            margin-bottom: 10px;
+        .center-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 12px;
         }
-
-        .links-list a {
-            color: #00e676;
-            text-decoration: underline;
-            font-size: 1.05rem;
-            transition: color 0.15s ease;
+        .text-left-content {
+            max-width: 800px;
+            text-align: left;
         }
-
-        .links-list a:hover {
-            color: #69f0ae;
+        .portfolio-block {
+            max-width: 700px; /* Giới hạn độ rộng vừa vặn để chữ xuống hàng đẹp */
+            margin: 0 auto; /* Căn giữa khối */
+            text-align: left; /* Giữ cho chữ và danh sách thẳng hàng bên lề trái */
+            padding: 20px;
+            font-family: sans-serif;
         }
-
-        /* Details info cards (sub sections) */
-        .info-card {
-            background-color: #2a2e33;
-            border: 1px solid #374151;
-            border-radius: 6px;
-            padding: 18px 22px;
-            margin-top: 15px;
-            margin-bottom: 25px;
-            display: none;
+        /* Khoảng cách dưới tiêu đề */
+        .project-title {
+            margin-bottom: 20px;
+            line-height: 1.5;
         }
-
-        .info-card.active {
-            display: block;
-        }
-
-        .info-card h3 {
-            color: #f1b335;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .info-card p, .info-card li {
-            color: #d1d5db;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .info-card ul {
+        /* Định dạng danh sách số */
+        .project-details {
             padding-left: 20px;
-            margin-top: 8px;
+            list-style-type: square;
         }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 50px 20px 40px;
-            margin-top: auto;
+        /* Tạo khoảng cách thông thoáng giữa các dòng li */
+        .project-details li {
+            margin-bottom: 12px;
+            line-height: 1.5;
         }
-
-        footer hr {
-            max-width: 780px;
-            margin: 0 auto 30px;
-        }
-
-        footer p {
-            color: #6b7280;
-            font-size: 0.92rem;
-            line-height: 1.6;
-            margin-bottom: 4px;
+        .project-details li:last-child {
+            margin-bottom: 0;
         }
     </style>
 </head>
 <body>
-
-    <!-- Top Left Logo / Title -->
-    <div class="top-bar">
-        <a href="#" class="top-brand">
-            <span class="icon">🧍‍♂️</span>
-            <span>Portfolio.Org</span>
-        </a>
-    </div>
-
-    <!-- Main Content Area -->
-    <main class="main-container">
-        <!-- Hero Title -->
-        <h1 class="hero-title">Welcome to my portfolio</h1>
-        <p class="hero-subtitle">Bùi Trần Nhật Anh - Student ID: BH02569</p>
-
-        <hr>
-
-        <!-- About Section Heading -->
-        <h2 class="section-heading">About</h2>
-
-        <!-- Green Links List -->
-        <ul class="links-list">
-            <li><a href="#about-me" onclick="toggleSection('about-me')">About Me & Education</a></li>
-            <li><a href="#skills" onclick="toggleSection('skills')">Skills & Web Technologies</a></li>
-            <li><a href="#projects" onclick="toggleSection('projects')">Practical Projects</a></li>
-            <li><a href="#contact" onclick="toggleSection('contact')">Sites - Contact</a></li>
-        </ul>
-
-        <!-- Collapsible Content for each link -->
-        <div id="about-me" class="info-card">
-            <h3>👤 About Me & Education</h3>
-            <p><strong>Họ và tên:</strong> Bùi Trần Nhật Anh</p>
-            <p><strong>Mã số sinh viên:</strong> BH02569</p>
-            <p><strong>Chuyên ngành:</strong> Thiết kế và Phát triển Website (Web Development / IT)</p>
-            <p><strong>Mục tiêu:</strong> Trở thành một lập trình viên Web chuyên nghiệp, làm chủ các công nghệ Frontend & Backend hiện đại.</p>
-        </div>
-
-        <div id="skills" class="info-card">
-            <h3>💻 Skills & Web Technologies</h3>
-            <ul>
-                <li><strong>HTML5 / CSS3:</strong> Flexbox, Responsive Layout, Web Standards</li>
-                <li><strong>JavaScript:</strong> DOM Manipulation, ES6+, Interactive Features</li>
-                <li><strong>Tools:</strong> Git, GitHub Pages, Visual Studio Code, Linux</li>
+    <div class="top-bar"></div>
+    <nav class="navbar">
+        <div class="logo">BNA</div>
+        <div class="nav-right">
+            <span class="theme-toggle"></span>
+            <ul class="nav-links">
+                <li><a href="#information">Personal Information</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#Skills">Skills</a></li>
             </ul>
         </div>
+    </nav>
 
-        <div id="projects" class="info-card">
-            <h3>🚀 Practical Projects</h3>
-            <ul>
-                <li><strong>Welcome to My Portfolio:</strong> Trang web portfolio cá nhân nộp bài lab, host trực tiếp trên GitHub Pages.</li>
-                <li><strong>Poeme Japanese Bakery:</strong> Giao diện website tiệm bánh Nhật Bản với đầy đủ menu và form đặt hàng.</li>
-            </ul>
-        </div>
+    <main>
+        <!-- Hero Section -->
+        <section style="display: flex; justify-content: center; align-items: center; gap: 20px; min-height: 5cqb; margin-top: 30px;">
+            <img src="assets/images/avatar.jpg" alt="Portfolio Avatar" style="width: 200px; height: 300px; object-fit: cover; border-radius: 8px;" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'">
+            <h1 style="text-align: center;">Welcome to My Portfolio</h1>
+        </section>
+        <br>
+        <p style="text-align: center;">Hi, my name is Bui Tran Nhat Anh, I'm a passionate developer with a strong interest in Web Design & Software Development.</p>
+        <br><br><br><br><br><br><br><br><br>
 
-        <div id="contact" class="info-card">
-            <h3>📬 Sites - Contact</h3>
-            <ul>
-                <li><strong>Email:</strong> nhatanh.dev@gmail.com</li>
-                <li><strong>GitHub:</strong> <a href="https://github.com" target="_blank" style="color:#00e676;">github.com/nhatanh</a></li>
-                <li><strong>Địa chỉ:</strong> Hà Nội, Việt Nam</li>
-            </ul>
-        </div>
+        <!-- Personal Information Section -->
+        <section id="information" style="text-align: center; gap: 20px; min-height: 5cqb;">
+            <h2>Personal Information</h2>
+            <p>Here are some details about me:</p>
+            <br><br><br>
+            <div class="center-container">
+                <div class="text-left-content">
+                    <p><strong>Name:</strong> Bui Tran Nhat Anh</p>
+                    <p><strong>Student ID:</strong> BH02569</p>
+                    <p><strong>Major:</strong> Web Design & Development (Unit 13)</p>
+                    <p><strong>Email:</strong> nhatanh.dev@gmail.com</p>
+                    <p><strong>Phone number:</strong> 0987.xxx.xxx</p>
+                </div>
+            </div>
+        </section>
+        <br><br><br><br><br><br><br><br><br>
+
+        <!-- Experience Section -->
+        <section id="experience" style="text-align: center; gap: 20px; min-height: 5cqb;">
+            <h2>Experience</h2>
+            <p>Here are the details about my work experience & projects:</p>
+            <br><br><br>
+            <div class="portfolio-block">
+                <p class="project-title">
+                    <strong>Project name: Poeme Japanese Bakery Website</strong> – Developing a modern online bakery storefront and order management website.
+                </p>
+                <ol class="project-details">
+                    <li>My role: Frontend Developer, UI/UX Designer.</li>
+                    <li>Date: 01/02/2026 - 18/03/2026</li>
+                    <li>Participants: 3</li>
+                    <li>Technology: HTML5, CSS3, JavaScript, Responsive Web Design.</li>
+                    <li>Achievement: Successfully designed an elegant website with online ordering features.</li>
+                </ol>
+            </div>
+            <br><br><br>
+            <div class="portfolio-block">
+                <p class="project-title">
+                    <strong>Project name: Welcome to My Portfolio</strong> – Personal developer portfolio hosted on GitHub Pages.
+                </p>
+                <ol class="project-details">
+                    <li>My role: Web Developer.</li>
+                    <li>Date: 01/10/2026 - Present</li>
+                    <li>Participants: 1</li>
+                    <li>Technology: Semantic HTML, Modern CSS, Git & GitHub Pages.</li>
+                    <li>Achievement: Successfully deployed and hosted live on GitHub Pages.</li>
+                </ol>
+            </div>
+        </section>
+        <br><br><br><br><br><br><br><br><br>
+
+        <!-- Education Section -->
+        <section id="education" style="text-align: center; gap: 20px; min-height: 5cqb;">
+            <h2>Education</h2>
+            <p>Here are the details about my education:</p>
+            <br><br><br>
+            <div class="portfolio-block">
+                <p class="project-title">
+                    <strong>School: BTEC FPT</strong> – Studying in the field of Information Technology & Software Engineering.
+                </p>
+                <ol class="project-details">
+                    <li>Date: 01/09/2025 - Now</li>
+                    <li>Student ID: BH02569</li>
+                    <li>Field of study: Website Design & Development (Unit 13), Software Testing, and Database Management.</li>
+                    <li>Developed responsive web applications using HTML, CSS, JavaScript, and modern web frameworks.</li>
+                    <li>Participated in teamwork projects, mastering version control with Git and GitHub.</li>
+                </ol>
+            </div>
+        </section>
+        <br><br><br><br><br><br><br><br><br>
+
+        <!-- Skills Section -->
+        <section id="Skills" style="text-align: center; gap: 20px; min-height: 5cqb;">
+            <h2>Skills</h2>
+            <p>Here are the details about my skills:</p>
+            <br><br><br>
+            <div class="portfolio-block">
+                <p class="project-title">
+                    <strong>Programming Languages:</strong> JavaScript, Java, C#, Python.
+                </p>
+                <p class="project-title">
+                    <strong>Web Development:</strong> HTML5, CSS3, Responsive Design, Flexbox, CSS Grid.
+                </p>
+                <p class="project-title">
+                    <strong>Database Management:</strong> SQL Server, MySQL.
+                </p>
+                <p class="project-title">
+                    <strong>Tools & Platforms:</strong> Git, GitHub, Visual Studio Code, Linux, Figma.
+                </p>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <hr>
-        <p>Don't forget bookmark this site.</p>
-        <p>You can forget this site, but you can't forget an Ideology</p>
+    <footer style="text-align: center; padding: 20px; background-color: #f1f1f1; margin-top: 40px;">
+        <p>&copy; 2026 Bui Tran Nhat Anh. All rights reserved.</p>
     </footer>
-
-    <script>
-        function toggleSection(id) {
-            const section = document.getElementById(id);
-            if (section) {
-                const isVisible = section.classList.contains('active');
-                // Ẩn tất cả card khác
-                document.querySelectorAll('.info-card').forEach(c => c.classList.remove('active'));
-                // Nếu chưa mở thì mở ra
-                if (!isVisible) {
-                    section.classList.add('active');
-                }
-            }
-        }
-    </script>
 </body>
 </html>
