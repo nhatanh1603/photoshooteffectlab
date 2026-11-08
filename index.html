@@ -1,62 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to my portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Photoshoot Effect</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="container">
+        <!-- Header -->
+        <section class="header">
+            <h1 class="logo">Your Logo</h1>
+            <p class="slogan">and a fancy slogan</p>
+        </section>
 
-    <header class="header-box">
-        <a href="./" onclick="window.location.reload(); return false;" title="Refresh page" class="logo-link">
-            <img src="logo.png" alt="Logo" class="ff-icon">
-        </a>
-    </header>
+        <!-- Menu -->
+        <section class="nav-menu">
+            <a href="#" class="link-blue">photoshoot</a>
+            <a href="#" class="link-green">Sweet Tabs</a>
+            <a href="#" class="link-white">NAVIGATION MENU</a>
+        </section>
 
-    <main class="container">
-        
-        <section class="profile-section">
-            <img src="avt.png" alt="Avatar" class="profile-avatar">
-            <div class="profile-bio">
-                <h1>Zino</h1>
-                <ul class="custom-list" style="margin-bottom: 0;">
-                    <li>Proficiency in programming languages: Java, C#, Python, JavaScript, HTML, CSS</li>
-                    <li>Knowledge of HTML, CSS, JavaScript, Responsive Web Design</li>
-                    <li>Experience with web development frameworks: Bootstrap, React.js</li>
-                    <li>Skills in development with Visual Studio Code, Git, and GitHub Pages</li>
-                </ul>
+        <!-- Khối nội dung chính -->
+        <section class="main-box">
+            <h2 class="box-title">PHOTOSHOOT EFFECT</h2>
+            <hr class="divider">
+            <div class="content-area">
+                <!-- Cột văn bản -->
+                <div class="text-column">
+                    <p class="text-green">In this tutorial, we are creating a photo shoot effect with our just-released PhotoShoot jQuery plug-in. With it you can convert a regular div on the page into a photo shooting stage simulating a camera-like feel.</p>
+                    <p class="text-white">Potential clients want to see who they'll be working with. They want to hire people, not stock photography. We produced a custom photo shoot to bring the people of Paterson Buchanan front and center and to underscore the firm's open and welcoming style. Vivid images illustrate Paterson Buchanan's wide range of clients, as well as their commitment to the picturesque region the firm serves.</p>
+                </div>
+                <!-- Cột hình ảnh -->
+                <div class="image-column">
+                    <img src="images/photoshooteffect.jpg" alt="Photoshoot effect image">
+                </div>
             </div>
         </section>
 
-        <section id="information">
-            <h2 class="section-title">Information</h2>
-            <ul class="custom-list">
-                <li>Bui Tran Nhat Anh</li>
-                <li>12/11 - Ha Noi, Viet Nam</li>
-            </ul>
+        <!-- Footer -->
+        <section class="footer">
+            <p>© Copyright 2026 - TQK123</p>
         </section>
-
-        <section id="achievement">
-            <h2 class="section-title">Achievement</h2>
-            <ul class="custom-list">
-                <li>Still alive from 2006</li>
-            </ul>
-        </section>
-
-        <section id="contact">
-            <h2 class="section-title">Contact</h2>
-            <ul class="custom-list">
-                <li>Email: zinofw202@gmail.com</li>
-                <li>GitHub: <a href="https://github.com/nhatanh1603" target="_blank" style="color: #222;">https://github.com/nhatanh1603/</a></li>
-            </ul>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>End.</p>
-    </footer>
-
+    </div>
 </body>
 </html>

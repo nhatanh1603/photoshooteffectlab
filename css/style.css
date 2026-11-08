@@ -1,0 +1,129 @@
+
+body {
+    background-color: #3b596b;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.logo {
+    color: white;
+    font-size: 48px;
+    font-family: "Comic Sans MS", cursive;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.slogan {
+    color: white;
+    font-family: "Comic Sans MS", cursive;
+    font-style:italic;
+    text-align: right;
+    margin-top: 5px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-menu {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.nav-menu a {
+    font-size: 18px;
+    text-decoration: underline;
+    margin-right: 15px;
+}
+
+.link-blue { color: #8ab4f8; }
+.link-green { color: #a8d08d; }
+.link-white { color: white; }
+
+
+.main-box {
+    background-color: #2b404d;
+    border: 2px solid #233440;
+    border-radius: 8px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.box-title {
+    color: white;
+    text-align: center;
+    font-family: "Comic Sans MS", cursive;
+    font-style: italic;
+    letter-spacing: 15px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+/* Đường kẻ ngang */
+.divider {
+    border: 0;
+    border-top: 2px solid #4a6b82;
+    margin-bottom: 20px;
+}
+
+.content-area {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.text-column {
+    width: 45%;
+}
+
+.text-green {
+    color: #a8d08d;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.text-white {
+    color: white;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* .image-column {
+    width: 50%;
+    background-color: #0b1828;
+    border: 1px solid #1a2a3a;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    min-height: 250px;
+} */
+
+.image-column img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.footer {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    font-size: 14px;
+}
