@@ -18,47 +18,31 @@
             line-height: 1.6;
         }
 
-        /* Top Header Navigation Box */
+        /* Top Header Box with Free Fire Logo */
         .header-box {
-            max-width: 1100px;
-            margin: 25px auto 40px;
-            padding: 20px 45px;
+            max-width: 850px;
+            margin: 25px auto 10px;
+            padding: 12px 25px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             background: #ffffff;
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-            border-radius: 4px;
+            border-radius: 6px;
         }
 
-        .header-title {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 26px;
-            font-weight: bold;
-            color: #111111;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: #222222;
-            font-size: 15px;
-            transition: color 0.2s ease;
-        }
-
-        .nav-menu a:hover {
-            color: #0066cc;
+        .ff-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
 
         /* Main Container */
         .container {
             max-width: 850px;
-            margin: 50px auto 0;
+            margin: 20px auto 0;
             padding: 0 20px 60px;
         }
 
@@ -144,6 +128,11 @@
 </head>
 <body>
 
+    <!-- Header Box with Free Fire Mobile Icon -->
+    <header class="header-box">
+        <img src="freefire.png" alt="Free Fire" class="ff-icon" onerror="this.src='freefire_app_icon.png'">
+    </header>
+
     <!-- Main Content -->
     <main class="container">
         
@@ -192,7 +181,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 1.</p>
+        <p>1.</p>
     </footer>
 
 </body>
